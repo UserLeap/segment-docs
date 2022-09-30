@@ -1,8 +1,9 @@
 ---
 title: Cordial (Actions) Destination
-hidden: true
 hide-boilerplate: true
 hide-dossier: true
+redirect_from:
+  - '/connections/destinations/catalog/cordial-actions'
 ---
 
 {% include content/plan-grid.md name="actions" %}
@@ -12,13 +13,15 @@ hide-dossier: true
 > info "Good to know"
 > This page is about the [Actions-framework](/docs/connections/destinations/actions/) Cordial Segment destination. There's also a page about the [non-Actions Cordial destination](/docs/connections/destinations/catalog/cordialio/). Both of these destinations receive data from Segment.
 
+This destination is maintained by Cordial. For any issues with the destination, [contact the Cordial Support team](mailto:support@cordial.com).
+
 ## Benefits of Cordial (Actions) vs Cordial Classic
 
 Cordial (Actions) provides the following benefits over the classic Cordial destination:
 
 - **Transparent data mapping**. The Classic Cordial destination receives data from Segment as is. The Cordial backend then converts those Segment events to Cordial's format and clients have limited control over this conversion. The Cordial (Actions) destination allows clients to fully define their own mappings of Segment events, making sure they receive data structured specifically for their needs. 
 - **Only sends the data you need**. With Cordial (Actions) you can define only those destination actions and mappings that make sense for your use cases, while Cordial Classic always sends four predefined API calls: identify, track, group, and page. 
-- **Sends Personas components to Cordial**. With Cordial (Actions) it's possible to define action mappings that will send audiences and user computed traits defined in the Segment Personas platform to Cordial.
+- **Sends Engage components to Cordial**. With Cordial (Actions) it's possible to define action mappings that will send audiences and user computed traits defined in the Segment Engage platform to Cordial.
 
 ## Getting started
 

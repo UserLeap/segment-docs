@@ -254,9 +254,9 @@ Segment.set({
 
 The `Segment.set()` method accepts an object with the following fields:
 
-- `collection` - Collection name.
-- `id` - Object's unique identifier.
-- `properties` - Object with free-form data.
+- `collection` - A collection name, which must be lowercase.
+- `id` - An object's unique identifier.
+- `properties` - An object with free-form data.
 
 > warning ""
 > When you use the `set()` method, you won't see events in the Source Debugger. Segment only sends events to connected warehouses.
@@ -385,7 +385,7 @@ Copy and paste this URL into the upstream tool or service to send data to this s
 
 ##### What is the retry policy for a webhook payload?
 
-The webhook payload retries up to six times with an exponential backoff for the function in the event of a failure with the function. After six attempts, the message is dropped.
+Segment retries invocations that throw RetryError or Timeout errors up to six times. After six attempts, the request is dropped.
 
 ##### What is the maximum payload size for the incoming webhook?
 
@@ -398,3 +398,7 @@ The execution time limit is five seconds, however Segment strongly recommends th
 #### Does Segment alter incoming payloads?
 
 Segment alphabetizes payload fields that come in to **deployed** Source Functions. Segment doesn't alphabetize payloads in the Functions tester. If you need to verify the exact payload that hits a Source Function, alphabetize it first. You can then make sure it matches what the Source Function ingests.
+
+#### Does the source function allow `GET` requests?
+
+`GET` requests are not supported with a source function. Source functions can only receive data through `POST` requests.

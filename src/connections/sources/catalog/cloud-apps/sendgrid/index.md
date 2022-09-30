@@ -2,7 +2,6 @@
 title: SendGrid Source
 id: jhr8dT2yHn
 ---
-{% include content/source-region-unsupported.md %}
 
 [SendGrid](http://sendgrid.com) is a trusted platform for transactional email and email marketing.
 
@@ -84,9 +83,6 @@ Collections are the groupings of resources Segment pulls from your source. In yo
 |  segments | Object | [Slices of lists](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html). **Will only return data if you're using SendGrid's Marketing Campaign features.** |
 |  recipients | Object | All contacts who have received an email, with information about their last activities and custom activities. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/contactdb.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
 |  campaigns | Object | All campaigns you've created in SendGrid. [More Info](https://sendgrid.com/docs/API_Reference/Web_API_v3/Marketing_Campaigns/campaigns.html).  **Will only return data if you're using SendGrid's Marketing Campaign features.** |
-
-> info "SendGrid and Personas"
-> SendGrid data is not available in Personas.
 
 ## Troubleshooting
 

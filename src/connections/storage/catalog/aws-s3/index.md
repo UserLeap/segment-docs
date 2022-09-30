@@ -310,7 +310,7 @@ To finish configuration, enable the AWS S3 Destination with IAM Role Support des
 6. Verify Segment data is stored in the S3 bucket by navigating to the `<your_S3_bucket>/segment-logs` in the AWS console. The bucket will take roughly 1 hour to begin receiving data.
 
 > info ""
-> Did you know you can create destinations with the Config API? For more information, see [Create Destination](https://reference.segmentapis.com/#51d965d3-4a67-4542-ae2c-eb1fdddc3df6){:target="_blank"}.
+> Did you know you can create destinations with the Public API? For more information, see [Create Destination](https://docs.segmentapis.com/tag/Destinations#operation/createDestination){:target="_blank"}.
 
 ## Migrate existing destinations
 
@@ -478,15 +478,15 @@ To use a custom key prefix for the files in your bucket, append the path to the 
 Amazon provides several methods to download data from an S3 bucket. For more information, see [Downloading an object](https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html){:target="_blank"}.
 
 
-## Personas
+## Engage
 
 > warning ""
-> As mentioned above, the AWS S3 destination works differently than other destinations in Segment. As a result, Segment sends **all** data from a Personas source to S3 during the sync process, not only the connected audiences and traits.
+> As mentioned above, the AWS S3 destination works differently than other destinations in Segment. As a result, Segment sends **all** data from a Engage source to S3 during the sync process, not only the connected audiences and traits.
 
-You can send computed traits and audiences generated using [Segment Personas](/docs/personas) to this destination as a **user property**. 
+You can send computed traits and audiences generated using [Engage](/docs/engage) to this destination as a **user property**. 
 
-For user-property destinations, Segment sends an [identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Personas sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Personas sets that value to `false`.
+For user-property destinations, Segment sends an [identify](/docs/connections/spec/identify/) call to the destination for each user added and removed. The property name is the snake_cased version of the audience name, with a true/false value to indicate membership. For example, when a user first completes an order in the last 30 days, Engage sends an Identify call with the property `order_completed_last_30days: true`. When the user no longer satisfies this condition (for example, it's been more than 30 days since their last order), Engage sets that value to `false`.
 
-When you first create an audience, Personas sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
+When you first create an audience, Engage sends an Identify call for every user in that audience. Later audience syncs send updates for users whose membership has changed since the last sync.
 
 {% include content/destination-footer.md %}
